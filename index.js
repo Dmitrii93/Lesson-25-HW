@@ -9,7 +9,9 @@ fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
     if (data.media_type === 'video') {
 
         let frame = document.createElement('iframe')
-        frame.src = data.url;
+        frame.src = data.url; //width="789" height="444"
+        frame.width = 789;
+        frame.height = 444;
         let figure = document.querySelector('figure');
         figure.innerHTML = '';
         figure.appendChild(frame);
